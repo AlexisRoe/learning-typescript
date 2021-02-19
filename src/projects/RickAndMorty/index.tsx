@@ -18,11 +18,15 @@ const RickAndMorty = (): JSX.Element => {
         state.episodes.length === 0 && fetchDataAction();
     }, [dispatch, state.episodes.length])
 
-    const toggleFavAction = (episodeID: number): Action => {
-        if (state.favourites.includes(episodeID)) {
-            return dispatch({type: "REM_FAV", payload: episodeID })
+    const isIncluded = (episode: Episode):boolean => {
+        return state.favourites.includes(episode)
+    }
+
+    const toggleFavAction = (episode: Episode): Action => {
+        if (isIncluded(episode)) {
+            return dispatch({type: "REM_FAV", payload: episode })
         }
-        return dispatch({ type: "ADD_FAV", payload: episodeID })
+        return dispatch({ type: "ADD_FAV", payload: episode })
     }
 
     return (
@@ -32,14 +36,14 @@ const RickAndMorty = (): JSX.Element => {
             <section>
                 {state.episodes.map((episode: Episode) => {
                     return (
-                        <div key={episode.id}>
+                        <div key={episode.id} className="episode">
                             <img src={episode.image.medium} alt={episode.name} />
                             <ul>
                                 <li>Title: {episode.name}</li>
                                 <li>Season: {episode.season}</li>
                                 <li>Number: {episode.number}</li>
                             </ul>
-                            <button style={{ backgroundColor: state.favourites.includes(episode.id) ? "pink" : "white"}} onClick={() => toggleFavAction(episode.id)}>{state.favourites.includes(episode.id) ? "💔" : "❤️"}</button>
+                            <button style={{ backgroundColor: isIncluded(episode) ? "pink" : "white"}} onClick={() => toggleFavAction(episode)}>{isIncluded(episode) ? "💔" : "❤️"}</button>
                         </div>
                     )
                 })}
