@@ -1,0 +1,35 @@
+.ToDoForm {
+    margin: 2rem auto;
+    width: 300px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.ToDoForm > input {
+    width: 100%;
+}
+
+.ToDoForm > button {
+    width: 8rem;
+}
+
+.ToDoList {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.ToDoList > ul {
+    padding-left: 0;
+}
+
+.ToDoList > ul > li {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.ToDoList > ul > li > span {
+    margin-right: auto;
+}

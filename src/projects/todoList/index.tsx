@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState} from 'react';
+import "./index.css";
 
 
 // type definitions = Aliases
@@ -45,21 +46,21 @@ const ToDoList = (): JSX.Element => {
     return (
         <>
             <h2>Project 1: ToDo-List</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="ToDoForm">
                 <input type='text' required value={value} onChange={handleChange} />
                 <button type='submit'>Add Todo</button>
             </form>
-            <section>
+            <section className="ToDoList">
                 <ul>
 
                     {todos && todos.map((todo: ToDo, index: number) => {
                         return (
                             <li key={index}>
-                                <span style={{textDecoration: todo.complete ? "line-through" : "none"}}>{todo.text}</span>
+                                <span style={{ textDecoration: todo.complete ? "line-through" : "none" }}>{todo.text}</span>
                                 <button type="button" onClick={() => completeToDo(index)}>{
-                                    todo.complete ? "completed" : "not yet completed"}
+                                    todo.complete ? "✓" : "⥁"}
                                 </button>
-                                <button type="button" onClick={() => deleteToDo(index)}>delete</button>
+                                <button type="button" onClick={() => deleteToDo(index)}>⤫</button>
                             </li>
                         )
                     })
