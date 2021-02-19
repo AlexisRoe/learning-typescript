@@ -2,8 +2,7 @@ import { useContext, useEffect } from "react";
 import "./index.css";
 import { Action, Episode } from "./interfaces";
 import { Store } from "./Store"
-
-const URL = "https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes";
+import {URL} from "./constants"
 
 
 const RickAndMorty = (): JSX.Element => {

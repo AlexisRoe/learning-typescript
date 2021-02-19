@@ -1,12 +1,8 @@
 import { createContext, useReducer } from "react";
+import { initialState } from "./constants";
 import { Action, Episode, initState } from "./interfaces";
 import {ProviderProps} from "./types"
 
-
-const initialState: initState = {
-    episodes: [],
-    favourites: [],
-};
 
 const reducer = (state: initState, action: Action): initState => {
     switch (action.type) {
