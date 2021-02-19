@@ -30,6 +30,18 @@ const ToDoList = (): JSX.Element => {
         setTodos(newTodos);
     }
 
+    const completeToDo = (index: number): void => {
+        const completedToDos: ToDo[] = [...todos];
+        completedToDos[index].complete = !completedToDos[index].complete;
+        setTodos(completedToDos);
+    }
+
+    const deleteToDo = (index: number): void => {
+        const clearedToDos: ToDo[] = [...todos];
+        clearedToDos.splice(index, 1);
+        setTodos(clearedToDos);
+    }
+
     return (
         <>
             <h2>Project 1: ToDo-List</h2>
@@ -37,12 +49,23 @@ const ToDoList = (): JSX.Element => {
                 <input type='text' required value={value} onChange={handleChange} />
                 <button type='submit'>Add Todo</button>
             </form>
-            {todos && todos.map(todo => {
-                return (
-                    <div>{todo.text}</div>
-                )
-            })
-            }
+            <section>
+                <ul>
+
+                    {todos && todos.map((todo: ToDo, index: number) => {
+                        return (
+                            <li key={index}>
+                                <span style={{textDecoration: todo.complete ? "line-through" : "none"}}>{todo.text}</span>
+                                <button type="button" onClick={() => completeToDo(index)}>{
+                                    todo.complete ? "completed" : "not yet completed"}
+                                </button>
+                                <button type="button" onClick={() => deleteToDo(index)}>delete</button>
+                            </li>
+                        )
+                    })
+                    }
+                </ul>
+            </section>
         </>
     );
 };
