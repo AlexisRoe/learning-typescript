@@ -138,7 +138,7 @@ Here are some learning from that...
 
 ### 4. useReducer in Action
 
-the reducer hook takes two arguments, a function for handling the state, and the default value. It returns the state and function to change the state. This function usually called dispatch got called by giving it the type of action and in some cases a payload. In this case it has to be {action: "ADD", payload: data}....
+the reducer hook takes two arguments, a function for handling the state, and the default value. It returns the state and function to change the state. This function usually called dispatch got called by giving it the type of action and in some cases a payload. In this case it has to be action = {type: "ADD", payload: data}....
 
 approach with if´s - default action / state
 
@@ -152,7 +152,7 @@ const reducer = (state, action) => {
         return state - 1
     }
     if (action === "Add") {
-        return 0
+        return state = 0
     }
     return state;
 }
@@ -191,13 +191,10 @@ const reducer = (state, action) => {
     switch (action) {
         case "ADD":
             return state + 1;
-            break;
         case "SUB":
             return state -1;
-            break;
         case "RES":
             return state = 0;
-            break;
         default:
             return state;
     }
