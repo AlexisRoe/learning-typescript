@@ -1,0 +1,25 @@
+.episode {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.episode > ul {
+    list-style: none;
+    margin-right: auto;
+    text-align: left;
+    font-size: .7rem;
+}
+
+.episode > button {
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+
+.episode > button:active,
+.episode > button:focus {
+    outline: none;
+}
