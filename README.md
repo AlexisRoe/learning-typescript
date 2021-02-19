@@ -96,7 +96,7 @@ the useState-Hook will be defined with a generic useState<string> for example. T
 
 Another way of definition is - It means the state have to be an array and each element of the array is defined by the interface "ToDo"
 
-````tsx
+```tsx
 
 interface ToDo {
     text: string,
@@ -106,11 +106,12 @@ interface ToDo {
 ...
 
 const [todos, setTodos] = useState<ToDo[]>([])
-````
+```
 
-### 2. FormElements
+### 3. FormElements
 
 A submit event of a form is definded as
+
 `````tsx
 type FormElem = React.FormEvent<HTMLFormElement>;
 ...
@@ -128,3 +129,78 @@ const handleChange = (event: ChangeEvent): void => {
         setValue(event.target.value)
     }
 `````
+
+## Rick and Morty API
+
+Instead of using the Redux library, the tutot uses the same methology and the useReducer Hook.
+
+Here are some learning from that...
+
+### 4. useReducer in Action
+
+the reducer hook takes two arguments, a function for handling the state, and the default value. It returns the state and function to change the state. This function usually called dispatch got called by giving it the type of action and in some cases a payload. In this case it has to be {action: "ADD", payload: data}....
+
+approach with if´s - default action / state
+
+```js
+...
+const reducer = (state, action) => {
+    if (action === "ADD") {
+        return state + 1
+    }
+    if (action === "SUB") {
+        return state - 1
+    }
+    if (action === "Add") {
+        return 0
+    }
+    return state;
+}
+...
+```
+
+approach with object/key - no default action
+
+```jsx
+const reducer =  (state, action) => {
+    const obj = {
+        "ADD": state + 1,
+        "SUB": state - 1,
+        "RES": state = 0
+    }
+
+    return obj[action];
+}
+...
+
+const [count, dispatch] = useReducer(reducer, 0);
+
+return (
+    <>
+        <div>{count}</div>
+        <button onClick={()=> dispatch("ADD")}>+</button>
+        ...
+    </>
+)
+```
+
+approach with switch/case
+
+```js
+const reducer = (state, action) => {
+    switch (action) {
+        case "ADD":
+            return state + 1;
+            break;
+        case "SUB":
+            return state -1;
+            break;
+        case "RES":
+            return state = 0;
+            break;
+        default:
+            return state;
+    }
+}
+...
+```
