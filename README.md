@@ -80,4 +80,51 @@ cd learning-typescript
 code .
 ```
 
-##
+## To-Do-List
+
+First project to learn typescript in a react app is a good old To-Do-List
+
+Here some learnings from that
+
+### 1. JSX.Element
+
+a component, which returns jsx is called "JSX:Element" for the return value
+
+### 2. useState
+
+the useState-Hook will be defined with a generic useState<string> for example. This generic is defined in the @types/react. The generic defines the default value, which will be stored in the state or returned by the function (set...).
+
+Another way of definition is - It means the state have to be an array and each element of the array is defined by the interface "ToDo"
+
+````tsx
+
+interface ToDo {
+    text: string,
+    complete: boolean,
+}
+
+...
+
+const [todos, setTodos] = useState<ToDo[]>([])
+````
+
+### 2. FormElements
+
+A submit event of a form is definded as
+`````tsx
+type FormElem = React.FormEvent<HTMLFormElement>;
+...
+const handleSubmit = (event: FormElem): void => {
+        event.preventDefault();
+        setValue("");
+    }
+````
+
+And a onChange event of an inputfield is defined as
+````tsx
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+...
+const handleChange = (event: ChangeEvent): void => {
+        setValue(event.target.value)
+    }
+`````
