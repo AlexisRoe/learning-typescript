@@ -4,7 +4,7 @@ import './App.css';
 import ToDoList from "./projects/todoList/index";
 
 import RickAndMorty from "./projects/RickAndMorty/index";
-import {StoreProvider} from "./projects/RickAndMorty/Store"
+import {StoreProvider} from "./projects/RickAndMorty/context"
 
 function App(): JSX.Element {
   return (

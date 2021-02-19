@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import "./index.css";
 import { Action, Episode } from "./interfaces";
-import { Store } from "./Store"
+import { Store } from "./context"
 import {URL} from "./constants"
 
 
