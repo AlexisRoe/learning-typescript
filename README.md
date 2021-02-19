@@ -132,7 +132,7 @@ const handleChange = (event: ChangeEvent): void => {
 
 ## Rick and Morty API
 
-Instead of using the Redux library, the tutot uses the same methology and the useReducer Hook.
+Instead of using the Redux library, the tutor uses the same methology and the useReducer Hook. 
 
 Here are some learning from that...
 
@@ -201,3 +201,16 @@ const reducer = (state, action) => {
 }
 ...
 ```
+
+### dispatch function
+
+````ts
+type Dispatch = React.Dispatch<IAction>
+...
+store: {state: IState, dispatch: Dispatch
+````
+
+### payload type
+
+The Unsolved Issue of the tutorial, sorry ... 🤷‍♂️
+
