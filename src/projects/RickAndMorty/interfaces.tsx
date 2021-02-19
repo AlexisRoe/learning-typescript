@@ -1,13 +1,3 @@
-export interface initState {
-    episodes: [],
-    favourites: number[]
-}
-
-export interface Action {
-    type: string,
-    payload: any,
-}
-
 export interface Episode {
     id: number
     url: string,
@@ -25,4 +15,12 @@ export interface Episode {
     },
     summary: string,
 
+}
+export interface Action {
+    type: string,
+    payload: any,
+}
+export interface initState {
+    episodes: Episode[],
+    favourites: Episode[]
 }

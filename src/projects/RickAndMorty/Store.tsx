@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { Action, initState } from "./interfaces";
+import { Action, Episode, initState } from "./interfaces";
 import {ProviderProps} from "./types"
 
 
@@ -15,7 +15,7 @@ const reducer = (state: initState, action: Action): initState => {
         case "ADD_FAV":
             return { ...state, favourites: [...state.favourites, action.payload] };
         case "REM_FAV":
-            const favourites = [...state.favourites].filter((element:number) => element !== action.payload)
+            const favourites = [...state.favourites].filter((element:Episode) => element !== action.payload)
             return { ...state, favourites};
         default:
             return state;
