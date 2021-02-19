@@ -1,6 +1,5 @@
 .ToDoForm {
     margin: 2rem auto;
-    width: 300px;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
@@ -16,7 +15,6 @@
 
 .ToDoList {
     margin: 0 auto;
-    width: 300px;
 }
 
 .ToDoList > ul {

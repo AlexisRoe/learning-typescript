@@ -58,7 +58,7 @@ const ToDoList = (): JSX.Element => {
                             <li key={index}>
                                 <span style={{ textDecoration: todo.complete ? "line-through" : "none" }}>{todo.text}</span>
                                 <button type="button" onClick={() => completeToDo(index)}>{
-                                    todo.complete ? "✓" : "⥁"}
+                                    todo.complete ? "⥁" : "✓"}
                                 </button>
                                 <button type="button" onClick={() => deleteToDo(index)}>⤫</button>
                             </li>
