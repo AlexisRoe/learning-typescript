@@ -1,6 +1,6 @@
 # learning & repeating typescript in vanilla javascript
 
-😉 ... repeating the basics is always a good idea. This follows the tutorial by [Maxwell](https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w). It´s actually a Udemy course, but you can find it [here](https://www.youtube.com/watch?v=BwuLxPH8IDs).
+😉 ... repeating the basics is always a good idea. This follows the tutorial by [Maxwell](https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w). It´s actually a Academind course, but you can find the first three hour [here](https://www.youtube.com/watch?v=BwuLxPH8IDs) - the actual 15+ hours course on [Academind](https://pro.academind.com/p/understanding-typescript) costs 19$ a month or 34$ for the single course - 🤷‍♂️.
 
 my learnings....
 
