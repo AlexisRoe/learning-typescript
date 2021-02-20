@@ -117,4 +117,20 @@ type Combine = {
 }
 ```
 
-## 5.
+## 5. function as a parameter
+
+````ts
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+    ...
+}
+````
+## 6. never type
+
+functions, which never return anything, have this return type - f.e. error functions or infinite loops
+
+````ts
+function generateError (message: string, code: number): never {
+    throw { message, errorCode: code };
+    // .../*  */
+}
+````
