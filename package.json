@@ -7,8 +7,7 @@
     "private": true,
     "main": "index.html",
     "scripts": {
-        "ts": "npx tsc main.ts",
-        "watch": "npx tsc --watch main.ts",
+        "watch": "npx tsc -w",
         "dev": "concurrently \"npm run watch\" \"npx live-server\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
