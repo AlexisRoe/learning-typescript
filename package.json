@@ -1,0 +1,19 @@
+{
+    "name": "typescript-basics",
+    "author": "Alexis Roehrling",
+    "version": "1.0.0",
+    "description": "learning typescript basics with the tutorial offered by",
+    "license": "MIT",
+    "private": true,
+    "main": "index.html",
+    "scripts": {
+        "ts": "npx tsc main.ts",
+        "watch": "npx tsc --watch main.ts",
+        "dev": "concurrently \"npm run watch\" \"npx live-server\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "concurrently": "^6.0.0",
+        "typescript": "^4.1.5"
+    }
+}
